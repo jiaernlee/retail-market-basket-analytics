@@ -1,0 +1,11 @@
+category,avg_price,margin,shelf_life_days
+Fresh Produce,4.99,0.35,7
+Dairy,3.99,0.25,14
+Meat,12.99,0.3,5
+Bakery,3.99,0.45,3
+Beverages,3.49,0.5,180
+Snacks,2.99,0.4,90
+Canned Goods,2.49,0.35,365
+Frozen Foods,5.99,0.4,180
+Household,6.99,0.45,365
+Personal Care,7.99,0.5,365
