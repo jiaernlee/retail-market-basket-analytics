@@ -31,14 +31,12 @@ stores_data = pd.read_csv("stores.csv")
 stores_unique = stores_data['store_id'].unique()
 
 with st.form('main'):
-    # store_id = st.selectbox(
-    #     "Select a store to analyze",
-    #     stores_unique
-    # )
-    store_id = 1
+    store_id = st.selectbox(
+        "Select a store to analyze",
+        stores_unique
+    )
 
-    # submit = st.form_submit_button()
-    submit = True
+    submit = st.form_submit_button()
 
 if submit:
     products = pd.read_csv('products.csv')
@@ -62,7 +60,7 @@ if submit:
     
     frequent_itemsets = apriori(basket, min_support=0.05, use_colnames=True)
     
-    rules = association_rules(frequent_itemsets, len(transactions), metric="lift", min_threshold=1.0)
+    rules = association_rules(frequent_itemsets, num_itemsets=len(transactions), metric="lift", min_threshold=1.0)
         
     rules['zhangs_metric'] = (rules['confidence'] - rules['consequent support']) / (1 - rules['consequent support'])
 
